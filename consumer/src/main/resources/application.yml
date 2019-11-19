@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: spring-cloud-consumer
+  zipkin:
+    base-url: http://localhost:9000
+  sleuth:
+    sampler:
+      percentage: 1.0
+server:
+  port: 8083
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://peer1:8760/eureka/,http://peer2:8760/eureka/,http://peer3:8760/eureka/
+feign:
+  hystrix:
+    enabled: true
